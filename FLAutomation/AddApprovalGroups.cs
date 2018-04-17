@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using System.Configuration;
-using System.Threading;
 
 namespace FLAutomation
 {
@@ -9,20 +8,23 @@ namespace FLAutomation
     class AddApprovalGroups : AutomationBase
     {
         public static string AddNewGroupCode = ConfigurationManager.AppSettings["addNewGroupCode"].ToString();
-
+        public static string Code = "101-C0410";
+        public static string Description = "Curriculum";
+        AddBand addBand = new AddBand();
         [Test]
         public void InsertApprover()
         {
             driver.Navigate().GoToUrl(AddNewGroupCode);
             driver.FindElement(By.Name("txtAuthGroupCode")).Clear();
-            driver.FindElement(By.Name("txtAuthGroupCode")).SendKeys("105-Z100");
+            driver.FindElement(By.Name("txtAuthGroupCode")).SendKeys(Code);
             driver.FindElement(By.Name("txtDescription")).Clear();
-            driver.FindElement(By.Name("txtDescription")).SendKeys("Suspense");
+            driver.FindElement(By.Name("txtDescription")).SendKeys(Description);
             driver.FindElement(By.Name("txtAdministrator")).Clear();
             driver.FindElement(By.Name("txtAdministrator")).SendKeys("MANAGER");
             driver.FindElement(By.Name("butSubmit")).Click();
+            addBand.AddBand1();
         }
-        public void AddWorkflow()
+     /*   public void AddWorkflow()
         {
             Thread.Sleep(200);
             driver.FindElement(By.Name("butAddNew")).Click();
@@ -52,7 +54,7 @@ namespace FLAutomation
             //change send to = 1
             //click submit
             //click back
-        }
+        }*/
 
     }
 }

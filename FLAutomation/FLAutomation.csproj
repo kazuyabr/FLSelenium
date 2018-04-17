@@ -57,7 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddApprovalGroups.cs" />
+    <Compile Include="AddApprover.cs" />
+    <Compile Include="AddBand.cs" />
     <Compile Include="AutomationBase.cs" />
+    <Compile Include="MaintainCostApproves.cs" />
+    <Compile Include="PopupHandle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
